@@ -12,7 +12,10 @@
 
   <ListView [items]="groceryList" row="1" class="small-spacing" [class.visible]="listLoaded">
     <template let-item="item">
-      <Label [text]="item.name" class="medium-spacing"></Label>
+      <GridLayout columns="*, auto">
+        <Label [text]="item.name" class="medium-spacing" horizontalAlignment="stretch"></Label>
+        <Button (tap)="delete(item)" horizontalAlignment="right">X</Button>
+      </GridLayout>
     </template>
   </ListView>
 
